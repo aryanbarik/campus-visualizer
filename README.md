@@ -1,5 +1,5 @@
 # campus-visualizer
-visualizing campus data around USC with PostgresSQL + PostGIS
+visualizing campus data around USC with PostgresSQL + PostGIS, ArcGis, and JavaScript
 
 ## Visualizations
 
