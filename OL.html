@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>OL</title>
+<script src="https://openlayers.org/api/OpenLayers.js">
+</script>
+<style>
+#map {
+    width:400px;
+    height:400px;
+}
+</style>
+</head>
+
+<body>
+<div id="map"></div>
+
+<script>
+// your JS code 
+console.log("Hola, all!");
+alert("Hello JS World!");
+
+// Storing all your points in the localStorage
+var points = {
+  "locations": [
+    {"name": "blue-light1", "lat": 34.022712, "lon": -118.284030},
+    {"name": "blue-light2", "lat": 34.020377, "lon": -118.285597},
+    {"name": "blue-light3", "lat": 34.020629, "lon": -118.287514},
+    {"name": "coffee-DULCE", "lat": 34.025311, "lon": -118.285205},
+    {"name": "coffee-Groundworks", "lat": 34.020037, "lon": -118.289967},
+    {"name": "coffee-starbucks", "lat": 34.021419, "lon": -118.282582},
+    {"name": "department-dentistry", "lat": 34.024161, "lon": -118.286942},
+    {"name": "department-EE", "lat": 34.019976, "lon": -118.290088},
+    {"name": "department-petroleum", "lat": 34.020075, "lon": -118.289125},
+    {"name": "water-entrance", "lat": 34.022585, "lon": -118.283826},
+    {"name": "water-near-library", "lat": 34.020411, "lon": -118.283413},
+    {"name": "water-tall-tower", "lat": 34.022247, "lon": -118.283259},
+    {"name": "home", "lat": 34.027781, "lon": -118.298414}
+  ]
+};
+
+localStorage.setItem("myPoints", JSON.stringify(points));
+
+// Fetching the stored data
+var dataStored = JSON.parse(localStorage.getItem("myPoints"));
+console.log(dataStored);
+
+// Function to initialize the map
+function initMap() {
+    map = new OpenLayers.Map('map');
+    basemap = new OpenLayers.Layer.OSM("Simple OSM Map");
+    map.addLayer(basemap);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map.addLayer(markers);
+}
+
+// Function to add a marker to the map
+function addMarker(name, latitude, longitude) {
+    var lonLat = new OpenLayers.LonLat(longitude, latitude)
+        .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+    );
+    var point = new OpenLayers.Marker(lonLat);
+    markers.addMarker(point);
+    map.setCenter(lonLat, 10); // second arg is zoom level
+    console.log(name + ": " + latitude + ", " + longitude);
+}
+
+// Initialize the map
+initMap();
+
+// Iterate through the array of points and add each as a marker
+var locations = dataStored.locations;
+for (var i = 0; i < locations.length; i++) {
+    addMarker(locations[i].name, locations[i].lat, locations[i].lon);
+}
+
+</script>
+
+
+
+</body><style>
+@media print {
+  #simplifyJobsContainer {
+    display: none;
+  }
+}
+</style><div id="simplifyJobsContainer" style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px; overflow: visible; z-index: 2147483647;"><span><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://pbanhockgagggenencehbnadejlgchfc/css/styles.css"><style>
+  :host {
+    all: initial;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    font-family: Palanquin, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  * {
+    font-family: Palanquin, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    scrollbar-width: thin;
+    scrollbar-color: rgba(203, 213, 225, 1) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(203, 213, 225, 1);
+    border-radius: 3px;
+    border: 0;
+  }
+</style><div id="simplifyJobsPortals"></div></template></span></div><script id="simplifyJobsPageScript" src="chrome-extension://pbanhockgagggenencehbnadejlgchfc/js/pageScript.bundle.js"></script></html>

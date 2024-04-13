@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Style id="z1">
+<IconStyle><Icon><href>http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png</href></Icon></IconStyle>
+</Style>
+<Folder>
+
+<Placemark><name>blue-light1</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.284030,34.022712</coordinates></Point>
+</Placemark>
+
+<Placemark><name>blue-light2</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.285597,34.020377 </coordinates></Point>
+</Placemark>
+
+<Placemark><name>blue-light3</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.287514,34.020629 </coordinates></Point>
+</Placemark>
+
+<Placemark><name>coffee-DULCE</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.285205,34.025311 </coordinates></Point>
+</Placemark>
+
+<Placemark><name>coffee-Groundworks</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.289967,34.020037 </coordinates></Point>
+</Placemark>
+
+<Placemark><name>coffee-starbucks</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.282582,34.021419 </coordinates></Point>
+</Placemark>
+
+<Placemark><name>department-dentistry</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.286942,34.024161 </coordinates></Point>
+</Placemark>
+
+<Placemark><name>department-EE</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.290088,34.019976 </coordinates></Point>
+</Placemark>
+
+<Placemark><name>department-petroleum</name>
+<styleUrl>#z1</styleUrl><Point><coordinates> -118.289125,34.020075 </coordinates></Point>
+</Placemark>
+
+<Placemark><name>water-entrance</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.283826,34.022585 </coordinates></Point>
+</Placemark>
+
+<Placemark><name>water-near-library</name>
+<styleUrl>#z1</styleUrl><Point><coordinates> -118.283413,34.020411 </coordinates></Point>
+</Placemark>
+
+<Placemark><name>water-tall-tower</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.283259,34.022247</coordinates></Point>
+</Placemark>
+</Folder>
+
+<Placemark><name>home</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.298414,34.027781</coordinates></Point>
+</Placemark>
+
+<Placemark>
+  <name>Convex Hull</name>
+  <Polygon>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+          -118.290088,34.019976 -118.298414,34.027781 -118.285205,34.025311 -118.282582,34.021419 -118.283413,34.020411 -118.290088,34.019976
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+  </Polygon>
+</Placemark>
+
+<Placemark>
+  <name>Line to department-EE</name>
+  <LineString>
+    <coordinates>
+      -118.298414,34.027781 -118.290088,34.019976
+    </coordinates>
+  </LineString>
+</Placemark>
+
+<Placemark>
+  <name>Line to coffee-Groundworks</name>
+  <LineString>
+    <coordinates>
+      -118.298414,34.027781 -118.289967,34.020037
+    </coordinates>
+  </LineString>
+</Placemark>
+
+<Placemark>
+  <name>Line to department-dentistry</name>
+  <LineString>
+    <coordinates>
+      -118.298414,34.027781 -118.286942,34.024161
+    </coordinates>
+  </LineString>
+</Placemark>
+
+<Placemark>
+  <name>Line to department-petroleum</name>
+  <LineString>
+    <coordinates>
+      -118.298414,34.027781 -118.289125,34.020075
+    </coordinates>
+  </LineString>
+</Placemark>
+
+
+</Document></kml>

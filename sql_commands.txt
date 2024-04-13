@@ -1,0 +1,27 @@
+CREATE TABLE geometries (name varchar, geom geometry);
+
+INSERT INTO geometries (name, geom) VALUES
+  ('blue-light1', 'POINT(-118.284030 34.022712)'),
+  ('blue-light2', 'POINT(-118.285597 34.020377)'),
+  ('blue-light3', 'POINT(-118.287514 34.020629)'),
+  ('coffee-DULCE', 'POINT(-118.285205 34.025311)'),
+  ('coffee-Groundworks', 'POINT(-118.289967 34.020037)'),
+  ('coffee-starbucks', 'POINT(-118.282582 34.021419)'),
+  ('department-dentistry', 'POINT(-118.286942 34.024161)'),
+  ('department-EE', 'POINT(-118.290088 34.019976)'),
+  ('department-petroleum', 'POINT(-118.289125 34.020075)'),
+  ('water-entrance', 'POINT(-118.283826 34.022585)'),
+  ('water-near-library', 'POINT(-118.283413 34.020411)'),
+  ('water-tall-tower', 'POINT(-118.283259 34.022247)'),
+  ('home', 'POINT(-118.298414 34.027781)');
+
+--convex hull  
+SELECT ST_AsKML(ST_ConvexHull(ST_Collect(geom))) AS kml_convex_hull
+FROM geometries
+WHERE name LIKE 'blue-light%' OR name LIKE 'coffee-%' OR name LIKE 'department-%' OR name LIKE 'water-%' OR name = 'home';
+
+--4 Nearest Neighbors  
+SELECT name, ST_AsText(geom) AS coordinates
+FROM geometries
+ORDER BY geom <-> ST_SetSRID(ST_MakePoint(-118.298414, 34.027781), 4326)
+LIMIT 4;
